@@ -15,6 +15,24 @@ No bank APIs, accounts, ads, or network calls.
 
 ## Install (Linux)
 
+### AppImage (any distro)
+
+Download **[BudgetWatch-1.0.0-x86_64.AppImage](https://github.com/PixelofVoid/budgetwatch/releases/download/v1.0.0/BudgetWatch-1.0.0-x86_64.AppImage)** from [Releases](https://github.com/PixelofVoid/budgetwatch/releases/latest):
+
+```bash
+chmod +x BudgetWatch-1.0.0-x86_64.AppImage
+./BudgetWatch-1.0.0-x86_64.AppImage
+```
+
+If the AppImage cannot mount (`libfuse.so.2` missing), install FUSE 2 or run with `--appimage-extract-and-run`.
+
+To build the AppImage yourself:
+
+```bash
+bash packaging/build-appimage.sh
+bash packaging/install-linux.sh
+```
+
 ### From source
 
 Python 3.12+ and PySide6:
@@ -27,19 +45,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 PYTHONPATH=src python -m budgetwatch
 ```
-
-### AppImage (any distro)
-
-GitHub rejects files over 100 MB, so the AppImage is not in this repo. Build it locally:
-
-```bash
-bash packaging/build-appimage.sh
-bash packaging/install-linux.sh
-```
-
-Or attach `dist-linux/BudgetWatch-1.0.0-x86_64.AppImage` to a GitHub Release after building.
-
-If an AppImage cannot mount (`libfuse.so.2` missing), install FUSE 2 or run with `--appimage-extract-and-run`.
 
 ## Android
 
