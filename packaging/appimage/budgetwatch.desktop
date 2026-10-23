@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=BudgetWatch
+Comment=Household cash-flow tracker — this month and the next six
+Exec=budgetwatch
+Icon=budgetwatch
+Terminal=false
+Categories=Office;Finance;
+StartupNotify=true
+StartupWMClass=budgetwatch
+Keywords=budget;bills;paycheck;cashflow;
+SingleMainWindow=true
+X-AppImage-Version=1.0.0

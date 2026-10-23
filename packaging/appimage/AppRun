@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Launch the bundled BudgetWatch binary from an AppImage or extracted AppDir.
+set -euo pipefail
+HERE="$(dirname "$(readlink -f "$0")")"
+export PATH="$HERE/usr/bin:${PATH:-}"
+# Prefer bundled Qt plugins when present.
+if [ -d "$HERE/usr/lib/budgetwatch/_internal/PySide6/Qt/plugins" ]; then
+  export QT_PLUGIN_PATH="$HERE/usr/lib/budgetwatch/_internal/PySide6/Qt/plugins${QT_PLUGIN_PATH:+:$QT_PLUGIN_PATH}"
+fi
+cd "$HOME"
+exec "$HERE/usr/bin/budgetwatch" "$@"

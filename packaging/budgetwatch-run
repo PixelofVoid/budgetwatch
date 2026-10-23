@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Launch BudgetWatch from a checkout that has a local .venv.
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+if [[ -x "$ROOT/.venv/bin/python" ]]; then
+  PYTHON="$ROOT/.venv/bin/python"
+else
+  PYTHON="${PYTHON:-python3}"
+fi
+export PYTHONPATH="$ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
+exec "$PYTHON" -m budgetwatch "$@"
