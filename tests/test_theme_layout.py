@@ -53,9 +53,9 @@ def test_nav_page_list_unchanged():
 
 
 def test_slash_wrap_breaks_at_slashes_only():
-    wrapped = _slash_wrap("/home/roni/.local/share/budgetwatch/budgetwatch.db")
+    wrapped = _slash_wrap("/home/user/.local/share/budgetwatch/budgetwatch.db")
     assert "\u200b" in wrapped
-    assert wrapped.replace("\u200b", "") == "/home/roni/.local/share/budgetwatch/budgetwatch.db"
+    assert wrapped.replace("\u200b", "") == "/home/user/.local/share/budgetwatch/budgetwatch.db"
     assert "budgetwatch.\u200bdb" not in wrapped
 
 
